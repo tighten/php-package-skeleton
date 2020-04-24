@@ -48,7 +48,6 @@ git init
 
 echo
 
-# TODO: This is only getting the first replacement per line. Need vim equivalent of /g
 find . -type f -exec sed -i '' -e "s/:author_name/$author_name/g" {} \;
 find . -type f -exec sed -i '' -e "s/:author_username/$author_username/g" {} \;
 find . -type f -exec sed -i '' -e "s/:author_email/$author_email/g" {} \;
@@ -56,7 +55,9 @@ find . -type f -exec sed -i '' -e "s/:package_name/$package_name/g" {} \;
 find . -type f -exec sed -i '' -e "s/:package_description/$package_description/g" {} \;
 find . -type f -exec sed -i '' -e "s/:package_php_namespace/$package_php_namespace/g" {} \;
 
-# TODO: Also rename the three src files
+mv src/Skeleton.php src/$package_php_namespace.php
+mv src/SkeletonFacade.php src/$package_php_namespaceFacade.php
+mv src/SkeletonServiceProvider.php src/$package_php_namespaceServiceProvider.php
 
 sed -i '' -e "/^\*\*Note:\*\* Replace/d" README.md
 
