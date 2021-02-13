@@ -1,7 +1,7 @@
 # Package title and description
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/tightenco/:package_name.svg?style=flat-square)](https://packagist.org/packages/tightenco/:package_name)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/tightenco/:package_name/run-tests?label=tests)](https://github.com/tightenco/:package_name/actions?query=workflow%3Arun-tests+branch%3Amaster)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/tighten/:package_name/run-tests?label=tests)](https://github.com/tighten/:package_name/actions?query=workflow%3Arun-tests+branch%3Amaster)
 
 **Note:** Replace ```:author_name``` ```:author_username``` ```:author_email``` ```:package_name``` ```:package_description``` ```:package_php_namespace``` with their correct values in [README.md](README.md), [composer.json](composer.json), and all three files under `src/`, then delete this line.
 

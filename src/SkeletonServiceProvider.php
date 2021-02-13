@@ -1,6 +1,6 @@
 <?php
 
-namespace Tightenco\:package_php_namespace;
+namespace Tighten\:package_php_namespace;
 
 use Illuminate\Support\ServiceProvider;
 

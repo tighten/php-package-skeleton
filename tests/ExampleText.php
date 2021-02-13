@@ -1,6 +1,6 @@
 <?php
 
-namespace Tightenco\:package_php_namespace\Tests;
+namespace Tighten\:package_php_namespace\Tests;
 
 use PHPUnit\Framework\TestCase;
 
