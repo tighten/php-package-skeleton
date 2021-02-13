@@ -4,7 +4,7 @@
     "keywords": [
         "tightenco",
         ":package_name",
-        "php",
+        "php"
     ],
     "homepage": "https://github.com/tighten/:package_name",
     "license": "MIT",
