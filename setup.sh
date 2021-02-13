@@ -19,26 +19,29 @@ current_directory=`basename $current_directory`
 read -p "Package Composer name ($current_directory): " package_name
 package_name=${package_name:-$current_directory}
 
-# Todo: make this put spaces where the dashes are
 fullname_guess="$(echo $package_name | perl -pe 's/(^|-)./uc($&)/ge;s/-/ /g')"
 read -p "Package full name ($fullname_guess): " package_fullname
 package_fullname=${package_fullname:-$fullname_guess}
-
-read -p "Package description: " package_description
 
 namespace_guess="$(echo $package_name | perl -pe 's/(^|-)./uc($&)/ge;s/-//g')"
 read -p "Package PHP namespace ($namespace_guess): " package_php_namespace
 package_php_namespace=${package_php_namespace:-$namespace_guess}
 
-echo
-echo -e "Author:  $author_name ($author_email)"
-echo -e "         github.com/$author_username"
-echo -e "Package: $package_fullname: $package_description"
-echo -e "         PHP:       Tighten\\$package_php_namespace"
-echo -e "         Packagist: tightenco/$package_name"
+read -p "Package description: " package_description
 
 echo
-echo "This script will replace the above values in all files in the project directory"
+echo    "----------------------------------------------------------------------"
+echo -e "Author:      $author_name ($author_email)"
+echo -e "             github.com/$author_username"
+echo
+echo -e "Name:        $package_fullname"
+echo -e "Description: $package_description"
+echo -e "PHP:         Tighten\\$package_php_namespace"
+echo -e "Packagist:   tightenco/$package_name"
+echo    "----------------------------------------------------------------------"
+
+echo
+echo "This script will replace the above values in all files in the project."
 read -p "Are you sure you wish to continue? (n/y) " -n 1 -r
 
 echo
