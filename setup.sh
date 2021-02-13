@@ -26,13 +26,14 @@ read -p "Package PHP namespace ($namespace_guess): " package_php_namespace
 package_php_namespace=${package_php_namespace:-$namespace_guess}
 
 echo
-echo -e "Author: $author_name ($author_email)"
-echo -e "        github.com/$author_username"
+echo -e "Author:  $author_name ($author_email)"
+echo -e "         github.com/$author_username"
 echo -e "Package: $package_name: $package_description"
-echo -e "         Tightenco/$package_php_namespace"
+echo -e "         tightenco/$package_php_namespace"
 
 echo
-echo "This script will replace the above values in all files in the project directory and reset the git repository."
+echo "This script will replace the above values in all files in the project directory"
+echo "and re-initialize this project's local git repository."
 read -p "Are you sure you wish to continue? (n/y) " -n 1 -r
 
 echo
