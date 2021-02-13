@@ -28,8 +28,9 @@ package_php_namespace=${package_php_namespace:-$namespace_guess}
 echo
 echo -e "Author:  $author_name ($author_email)"
 echo -e "         github.com/$author_username"
-echo -e "Package: $package_name: $package_description"
-echo -e "         tightenco/$package_php_namespace"
+echo -e "Package: $package_description"
+echo -e "         PHP:       Tighten\\$package_php_namespace"
+echo -e "         Packagist: tightenco/$package_name"
 
 echo
 echo "This script will replace the above values in all files in the project directory"
