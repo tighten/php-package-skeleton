@@ -33,7 +33,6 @@ echo -e "         tightenco/$package_php_namespace"
 
 echo
 echo "This script will replace the above values in all files in the project directory"
-echo "and re-initialize this project's local git repository."
 read -p "Are you sure you wish to continue? (n/y) " -n 1 -r
 
 echo
@@ -41,11 +40,6 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
     [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
 fi
-
-echo
-
-rm -rf .git
-git init
 
 echo
 
