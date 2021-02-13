@@ -19,6 +19,11 @@ current_directory=`basename $current_directory`
 read -p "Package Composer name ($current_directory): " package_name
 package_name=${package_name:-$current_directory}
 
+# Todo: make this put spaces where the dashes are
+fullname_guess="$(echo $package_name | perl -pe 's/(^|-)./uc($&)/ge;s/-/ /g')"
+read -p "Package full name ($fullname_guess): " package_fullname
+package_fullname=${package_fullname:-$fullname_guess}
+
 read -p "Package description: " package_description
 
 namespace_guess="$(echo $package_name | perl -pe 's/(^|-)./uc($&)/ge;s/-//g')"
@@ -28,7 +33,7 @@ package_php_namespace=${package_php_namespace:-$namespace_guess}
 echo
 echo -e "Author:  $author_name ($author_email)"
 echo -e "         github.com/$author_username"
-echo -e "Package: $package_description"
+echo -e "Package: $package_fullname: $package_description"
 echo -e "         PHP:       Tighten\\$package_php_namespace"
 echo -e "         Packagist: tightenco/$package_name"
 
@@ -48,6 +53,7 @@ find . -type f -exec sed -i '' -e "s/:author_name/$author_name/g" {} \;
 find . -type f -exec sed -i '' -e "s/:author_username/$author_username/g" {} \;
 find . -type f -exec sed -i '' -e "s/:author_email/$author_email/g" {} \;
 find . -type f -exec sed -i '' -e "s/:package_name/$package_name/g" {} \;
+find . -type f -exec sed -i '' -e "s/:package_fullname/$package_name/g" {} \;
 find . -type f -exec sed -i '' -e "s/:package_description/$package_description/g" {} \;
 find . -type f -exec sed -i '' -e "s/:package_php_namespace/$package_php_namespace/g" {} \;
 

@@ -1,4 +1,4 @@
-# Package title and description
+# :package_fullname
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/tightenco/:package_name.svg?style=flat-square)](https://packagist.org/packages/tightenco/:package_name)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/tighten/:package_name/run-tests?label=tests)](https://github.com/tighten/:package_name/actions?query=workflow%3Arun-tests+branch%3Amaster)
