@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Tightenco\\:package_php_namespace\\": "src"
+            "Tighten\\:package_php_namespace\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tightenco\\:package_php_namespace\\Tests\\": "tests"
+            "Tighten\\:package_php_namespace\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -43,10 +43,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Tightenco\\:package_php_namespace\\:package_php_namespaceServiceProvider"
+                "Tighten\\:package_php_namespace\\:package_php_namespaceServiceProvider"
             ],
             "aliases": {
-                ":package_php_namespace": "Tightenco\\:package_php_namespace\\:package_php_namespaceFacade"
+                ":package_php_namespace": "Tighten\\:package_php_namespace\\:package_php_namespaceFacade"
             }
         }
     },
