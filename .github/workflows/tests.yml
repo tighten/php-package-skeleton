@@ -22,6 +22,9 @@ jobs:
           extensions: posix, dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
           coverage: none
 
+      - name: Run setup script
+        run: echo "Test Author\ntest.author@example.com\ntestauthor\n\n\n\n" | sh ./setup.sh
+
       - name: Install dependencies
         uses: "ramsey/composer-install@v2"
         with: 
