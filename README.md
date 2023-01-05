@@ -5,7 +5,7 @@
 
 **Note:** Replace ```:author_name``` ```:author_username``` ```:author_email``` ```:package_name``` ```:package_description``` ```:package_php_namespace``` with their correct values in [README.md](README.md), [composer.json](composer.json), and all three files under `src/`, then delete this line.
 
-Short description here, and maybe small justification of why it's valuable.
+:package_description
 
 ## Installation
 
