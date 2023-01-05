@@ -52,19 +52,19 @@ fi
 
 echo
 
-find . -type f -exec sed -i '' -e "s/:author_name/$author_name/g" {} \;
-find . -type f -exec sed -i '' -e "s/:author_username/$author_username/g" {} \;
-find . -type f -exec sed -i '' -e "s/:author_email/$author_email/g" {} \;
-find . -type f -exec sed -i '' -e "s/:package_name/$package_name/g" {} \;
-find . -type f -exec sed -i '' -e "s/:package_fullname/$package_name/g" {} \;
-find . -type f -exec sed -i '' -e "s/:package_description/$package_description/g" {} \;
-find . -type f -exec sed -i '' -e "s/:package_php_namespace/$package_php_namespace/g" {} \;
+LC_ALL=C find . -type f -exec sed -i '' -e "s/:author_name/$author_name/g" {} \;
+LC_ALL=C find . -type f -exec sed -i '' -e "s/:author_username/$author_username/g" {} \;
+LC_ALL=C find . -type f -exec sed -i '' -e "s/:author_email/$author_email/g" {} \;
+LC_ALL=C find . -type f -exec sed -i '' -e "s/:package_name/$package_name/g" {} \;
+LC_ALL=C find . -type f -exec sed -i '' -e "s/:package_fullname/$package_name/g" {} \;
+LC_ALL=C find . -type f -exec sed -i '' -e "s/:package_description/$package_description/g" {} \;
+LC_ALL=C find . -type f -exec sed -i '' -e "s/:package_php_namespace/$package_php_namespace/g" {} \;
 
 mv src/Skeleton.php "src/${package_php_namespace}.php"
 mv src/SkeletonFacade.php "src/${package_php_namespace}Facade.php"
 mv src/SkeletonServiceProvider.php "src/${package_php_namespace}ServiceProvider.php"
 
-sed -i '' -e "/^\*\*Note:\*\* Replace/d" README.md
+LC_ALL=C sed -i '' -e "/^\*\*Note:\*\* Replace/d" README.md
 
 echo "Replaced all values and reset git directory, self destructing in 3... 2... 1..."
 
