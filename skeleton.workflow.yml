@@ -22,13 +22,11 @@ jobs:
           extensions: posix, dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
           coverage: none
 
-      - name: Run setup script
-        run: echo "Test Author\ntest.author@example.com\ntestauthor\n\n\n\n" | sh ./setup.sh
-
       - name: Install dependencies
         uses: "ramsey/composer-install@v2"
-        with: 
-          composer-options: "--no-interaction --no-suggest --ignore-platform-reqs"
+        with:
+          dependency-versions: "highest"
+          composer-options: "--ignore-platform-reqs --no-plugins"
 
       - name: Run PHP tests
         run: vendor/bin/phpunit

@@ -52,17 +52,20 @@ fi
 
 echo
 
-LC_ALL=C find . -type f -exec sed -i '' -e "s/:author_name/$author_name/g" {} \;
-LC_ALL=C find . -type f -exec sed -i '' -e "s/:author_username/$author_username/g" {} \;
-LC_ALL=C find . -type f -exec sed -i '' -e "s/:author_email/$author_email/g" {} \;
-LC_ALL=C find . -type f -exec sed -i '' -e "s/:package_name/$package_name/g" {} \;
-LC_ALL=C find . -type f -exec sed -i '' -e "s/:package_fullname/$package_name/g" {} \;
-LC_ALL=C find . -type f -exec sed -i '' -e "s/:package_description/$package_description/g" {} \;
-LC_ALL=C find . -type f -exec sed -i '' -e "s/:package_php_namespace/$package_php_namespace/g" {} \;
+LC_ALL=C find . -type f -exec sed -i '' -e "s/Tammy Robinson/$author_name/g" {} \;
+LC_ALL=C find . -type f -exec sed -i '' -e "s/tammyrobinson/$author_username/g" {} \;
+LC_ALL=C find . -type f -exec sed -i '' -e "s/tammyprodev@gmail.com/$author_email/g" {} \;
+LC_ALL=C find . -type f -exec sed -i '' -e "s/php-package-skeleton/$package_name/g" {} \;
+LC_ALL=C find . -type f -exec sed -i '' -e "s/php-package-skeleton/$package_name/g" {} \;
+LC_ALL=C find . -type f -exec sed -i '' -e "s//$package_description/g" {} \;
+LC_ALL=C find . -type f -exec sed -i '' -e "s/PhpPackageSkeleton/$package_php_namespace/g" {} \;
 
 mv src/Skeleton.php "src/${package_php_namespace}.php"
 mv src/SkeletonFacade.php "src/${package_php_namespace}Facade.php"
 mv src/SkeletonServiceProvider.php "src/${package_php_namespace}ServiceProvider.php"
+
+mkdir -p .github/workflows
+mv skeleton.workflow.yml ".github/workflows/tests.yml"
 
 LC_ALL=C sed -i '' -e "/^\*\*Note:\*\* Replace/d" README.md
 
